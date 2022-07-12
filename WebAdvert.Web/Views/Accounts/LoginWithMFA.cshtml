@@ -1,0 +1,37 @@
+﻿@model WebAdvert.Web.Models.Accounts.LoginWithMFA
+
+@{
+    ViewData["Title"] = "Two-factor authentication";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<p>Your login is protected by an SMS 2FA code. Enter your code below.</p>
+
+<form class="row g-3" method="post" asp-controller="Accounts" asp-action="ResetPassword">
+    <div class="col-md-4">
+        <input asp-for="RememberMe" type="hidden" />
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="col-md-12 mb-2">
+            <label asp-for="TwoFactorCode"></label>
+            <input asp-for="TwoFactorCode" class="form-control" autocomplete="off" />
+            <span asp-validation-for="TwoFactorCode" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-12 mb-2">
+            <div class="form-check">
+                <input asp-for="RememberMachine" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label asp-for="RememberMachine" class="form-check-label" for="flexCheckDefault">
+                    @Html.DisplayNameFor(m => m.RememberMachine)
+                </label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-secondary">Log in</button>
+        </div>
+    </div>
+</form>
+

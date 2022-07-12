@@ -2,10 +2,15 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @model WebAdvert.Web.Models.Accounts.ConfirmModel
+@{
+    ViewData["Title"] = "Confirm Email";
+}
+
+<h2>@ViewData["Title"]</h2>
 
 <form class="row g-3" method="post" asp-controller="Accounts" asp-action="Confirm">
     <div class="col-md-4">
-        <h4>Confirm account</h4>
+        <h4>Confirm your new account</h4>
         <hr />
         <div asp-validation-summary="All" class="text-danger">
 

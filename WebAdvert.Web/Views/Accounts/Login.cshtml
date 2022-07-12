@@ -1,16 +1,19 @@
 ﻿@model WebAdvert.Web.Models.Accounts.LoginModel
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h2>@ViewData["Title"]</h2>
 
 <div class="row">
     <div class="col-md-4">
-        <h4>Login using your email address and password</h4>
+        <h4>Log in with email and password</h4>
         <h5>
             <a asp-controller="Accounts" asp-action="Signup">
-                If you are not a member youo can sign up here
+                If not a member yet, you can sign up here
             </a>
 
-            <hr />
-
-            <form class="row g-3" method="post" asp-controller="Accounts" asp-action="Login">
+            <form class="row" method="post" asp-controller="Accounts" asp-action="Login">
                 <div asp-validation-summary="All" class="text-danger"></div>
 
                 <div class="col-md-12 mb-2">
@@ -36,6 +39,15 @@
 
                 <div class="col-md-12 mb-3">
                     <button type="submit" class="btn btn-secondary">Login</button>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <p>
+                        <a asp-controller="Accounts" asp-action="Signup">Register as a new user</a>
+                    </p>
+                    <p>
+                        <a asp-controller="Accounts" asp-action="ForgotPassword">Forgot your password?</a>
+                    </p>
                 </div>
             </form>
         </h5>
